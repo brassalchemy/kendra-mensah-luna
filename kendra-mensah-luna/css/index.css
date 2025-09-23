@@ -1,9 +1,7 @@
-body { 
+body {
     background-color: black;
 }
-body { 
-    color: white; 
-}
+
 body { 
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,14 +17,16 @@ h2 {
     font-size: large;
     font-weight: 100;
     color: antiquewhite;
-    text-align: left;
+
+text-align: left;
 }   
 
-h3 { 
+h3 {
     font-size: large;
     font-weight: 100;
     color: antiquewhite;
 }
+
 #Experience ul {
     list-style: none; 
     padding: 0;
@@ -34,19 +34,19 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-  }
+}
   
-  #Experience li {
+#Experience li {
     background-color: #1f1f1f;
     color: #f0f0f0;
     padding: 0.75rem 1.25rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    flex-direction: row;
     text-align: center;
-  }
-  
+    flex: 1 1 150px; /* Keeps responsive layout from lesson-8 */
+}
 
-  
-  
+#Experience li:hover {
+    background-color: #292929;
+    transform: translateY(-4px);
+}
