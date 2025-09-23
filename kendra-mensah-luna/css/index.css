@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: pink;
 }
 
 body { 
@@ -16,7 +16,7 @@ h1 {
 h2 { 
     font-size: large;
     font-weight: 100;
-    color: antiquewhite;
+    color: rgb(188, 152, 105);
 
 text-align: left;
 }   
@@ -24,9 +24,8 @@ text-align: left;
 h3 {
     font-size: large;
     font-weight: 100;
-    color: antiquewhite;
+    color: rgb(188, 152, 105);
 }
-
 #Experience ul {
     list-style: none; 
     padding: 0;
