@@ -42,10 +42,80 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
-    flex: 1 1 150px; /* Keeps responsive layout from lesson-8 */
+    flex: 1 1 150px; 
 }
 
 #Experience li:hover {
     background-color: #292929;
     transform: translateY(-4px);
+}
+
+#Form form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#Form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: rgb(188, 152, 105);
+}
+
+#Form input[type="text"],
+#Form input[type="email"],
+#Form textarea {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+#Form textarea {
+    min-height: 100px;
+}
+
+#Form button[type="submit"] {
+    background-color: rgb(188, 152, 105);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Form button[type="submit"]:hover {
+    background-color: rgb(160, 130, 90);
+}
+
+
+@media (max-width: 600px) {
+    #Form form {
+        padding: 12px;
+        margin: 10px;
+    }
+
+    #Form input[type="text"],
+    #Form input[type="email"],
+    #Form textarea {
+        font-size: 18px;
+        padding: 14px 12px;
+    }
+
+    #Form button[type="submit"] {
+        width: 100%;
+        font-size: 20px;
+        padding: 16px 0;
+    }
 }

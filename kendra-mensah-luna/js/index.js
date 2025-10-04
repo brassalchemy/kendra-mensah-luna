@@ -1,56 +1,47 @@
-// Create a new <footer> element 
-const body = document.body;
-
-// ------------------------- FOOTER ----------------------
-
-// Create a footer element <footer></footer> 
-const footer = document.createElement("footer"); 
-// Append footer to html body 
-body.appendChild(footer);
-
-// Create a new Date object 
-const today = new Date(); 
-
-// Get the current year (call the function!)
-const thisYear = today.getFullYear();  
-
-// Create a new <p> element for copyright 
-const copyright = document.createElement("p"); 
-
-// Set inner HTML with name and current year 
-copyright.innerHTML = `\u00A9 Kendra Mensah ${thisYear}`;
-
-// Append <p> to the footer 
-footer.appendChild(copyright); 
-
-// Style the footer 
-footer.style.textAlign = "center"; 
-
-// ------------------------- FOOTER ----------------------
-
-// List of technical skills 
-const skills = ["Javascript", "HTML", "CSS", "GitHub"]  
-
-// select the skills section by id 
-const skillsSection = document.getElementById("Skills");
-
-// Select the <ul> inside the Skills section
-const skillsList = skillsSection.querySelector("ul");
-
-// Loop through the skills array 
-// <ul>
-//   <li>skill</li>
-//   ...
-// </ul> 
-for (let i = 0; i < skills.length; i++) {  
-    // create a new <li> element 
-    const skill = document.createElement("li");
-    
-    // Set the text inside of the <li> to current skill 
-    skill.innerHTML = skills[i];
-
-    // Append <li> to skills list 
-    skillsList.appendChild(skill);
-}
-
-
+messageForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page reload
+  
+    // Get values from form inputs
+    const userName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const userMessage = event.target.usersMessage.value;
+  
+    // Log values to console
+    console.log("Name:", userName);
+    console.log("Email:", usersEmail);
+    console.log("Message:", userMessage);
+  
+    // Select the #messages section and its <ul>
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector("ul");
+  
+    // Create a new <li> element for the message
+    const newMessage = document.createElement("li");
+  
+    // Set inner HTML with user's info
+    newMessage.innerHTML = `
+      <a href="mailto:${usersEmail}">${userName}</a> wrote:
+      <span> ${userMessage} </span>
+    `;
+  
+    // Create a Remove button
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
+    removeButton.type = "button";
+  
+    // Add event listener to Remove button
+    removeButton.addEventListener("click", function () {
+      const entry = removeButton.parentNode; // The <li> element
+      entry.remove(); // Remove the message from the DOM
+    });
+  
+    // Add the Remove button to the <li>
+    newMessage.appendChild(removeButton);
+  
+    // Add the message to the <ul>
+    messageList.appendChild(newMessage);
+  
+    // Reset the form fields
+    messageForm.reset();
+  });
+  
