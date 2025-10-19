@@ -7,6 +7,8 @@
     color: whitesmoke;
     margin: 0;
     padding: 0;
+    width: 100%;
+
 }
 
 /**
@@ -28,19 +30,20 @@
     padding: 14px 16px;
 }
 
-/**
- * Header Styles
- */
-h1 { 
-    padding-top: 100px;
-    padding-bottom: 140px;
-    margin-bottom: 300px;
-    text-align: center;
+h1 {
     font-family: "Monsieur La Doulaise", cursive;
     font-weight: 300;
-    font-size: 200px;
+    text-align: center;
     color: rgb(203, 46, 135);
-}
+  
+    /* responsive huge font size */
+    font-size: clamp(4rem, 10vw, 12rem);
+  
+    /* adjust padding/margins to scale more gracefully */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+  }
 
 /**
  * About Section
