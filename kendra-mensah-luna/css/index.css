@@ -1,89 +1,170 @@
-body { 
+/** 
+ * Global Styles
+ */
+ body {
     background-color: black;
-}
-body { 
-    color: white; 
-}
-body { 
     font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
 }
 
-h1 { 
-    padding-bottom: 20px;
+/**
+ * Navigation Bar
+ */
+.topnav { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    overflow: hidden;
+    font-style: italic;
+}
+
+.topnav a { 
+    color: black;
     text-align: center;
-    
-
+    padding: 14px 16px;
 }
 
-h2 { 
-    font-size: large;
-    font-weight: 100;
-    color: antiquewhite;
-    text-align: left;
-}   
-
-h3 { 
-    font-size: large;
-    font-weight: 100;
-    color: antiquewhite;
+/**
+ * Header Styles
+ */
+h1 { 
+    padding-top: 100px;
+    padding-bottom: 140px;
+    margin-bottom: 300px;
+    text-align: center;
+    font-family: "Monsieur La Doulaise", cursive;
+    font-weight: 300;
+    font-size: 200px;
+    color: rgb(203, 46, 135);
 }
+
+/**
+ * About Section
+ */
+#About h2 {
+    font-style: italic;
+    font-weight: 100;
+}
+
+#About p {
+    font-size: medium;
+    font-style: italic;
+    font-weight: 50;
+    color: black;
+    background-color: whitesmoke;
+    margin-top: 400px;
+    margin-bottom: 500px;
+}
+
+/**
+ * Experience Section
+ */
+#Experience h2, 
+#Experience h3 {
+    font-style: italic;
+    font-weight: 100;
+}
+
+#Experience p {
+    background-color: whitesmoke;
+    color: black;
+    margin-bottom: 200px;
+}
+
 #Experience ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
     margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-  
-  #Experience li {
-    background-color: #1f1f1f;
-    color: #f0f0f0;
+}
+
+#Experience li {
+    background-color: whitesmoke;
+    color: black;
     padding: 0.75rem 1.25rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    flex-direction: row;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(71, 72, 59, 0.2);
     text-align: center;
-  }
+    flex: 1 1 150px; 
+}
 
-  /* ========================================================
-      Medium Devices - Tablets (min 768px)
-     ======================================================== */ 
-  
-  @media (min-width: 768px) { 
-    h1 { 
-        font-size: 2rem; 
+#Experience li:hover {
+    background-color: #c8609b;
+    transform: translateY(-4px);
+}
+
+#Form form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#Form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: rgb(188, 152, 105);
+}
+
+#Form input[type="text"],
+#Form input[type="email"],
+#Form textarea {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+#Form textarea {
+    min-height: 100px;
+}
+
+#Form button[type="submit"] {
+    background-color: rgb(188, 152, 105);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Form button[type="submit"]:hover {
+    background-color: rgb(160, 130, 90);
+}
+
+
+@media (max-width: 600px) {
+    #Form form {
+        padding: 12px;
+        margin: 10px;
     }
 
-  h2,h3 { 
-    font-size: 1.5rem;
-  }
-
-  #Experience li { 
-    flex: 1 1 calc(50% - 1rem); /* two columns */
-    } 
-  }
-  
-  /* =====================================================
-        Large Devices - Desktop (min 1024px)
-     ======================================================== */ 
-     
-    @media (min-width: 1024px) { 
-        h1 { 
-            font-size: 2.5rem;
-        }
-    h2, h3 { 
-        font-size: 1.75rem; 
-    }
-    
-    #Expereince ul { 
-        justify-content: space-between;
+    #Form input[type="text"],
+    #Form input[type="email"],
+    #Form textarea {
+        font-size: 18px;
+        padding: 14px 12px;
     }
 
-    #Experience li { 
-        flex: 1 1 calc(33.33% - 1rem); /* three columns */ 
+    #Form button[type="submit"] {
+        width: 100%;
+        font-size: 20px;
+        padding: 16px 0;
     }
 }
-  
-  
