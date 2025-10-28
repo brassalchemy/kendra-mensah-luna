@@ -59,7 +59,7 @@ console.log(projectSection)
 // Search the DOM for an element that matches this selector 
 const projectList = projectSection.querySelector("ul")
 
-fetch('https://api.github.com/users/brassalchemy/repos')
+fetch('https://api.github.com/users/kendra-mensah/repos')
         .then(response => response.json()) 
         .then(data => {
          const repositories = data;
