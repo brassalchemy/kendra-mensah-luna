@@ -212,14 +212,14 @@ h1 {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 #Form label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: black;
+    color: rgb(188, 152, 105);
 }
 
 #Form input[type="text"],
@@ -241,7 +241,7 @@ h1 {
 }
 
 #Form button[type="submit"] {
-    background-color: rgb(183, 68, 177);
+    background-color: rgb(188, 152, 105);
     color: #fff;
     border: none;
     padding: 14px 24px;
@@ -252,7 +252,7 @@ h1 {
 }
 
 #Form button[type="submit"]:hover {
-    background-color: black;
+    background-color: rgb(160, 130, 90);
 }
 
 /**
