@@ -44,4 +44,41 @@ messageForm.addEventListener("submit", function (event) {
     // Reset the form fields
     messageForm.reset();
   });
-  
+
+// < --------------------- FETCH REQUEST ----------------------- >
+
+// Search the DOM for an element with this id 
+const projectSection = document.getElementById("Projects")
+console.log(projectSection)
+
+// Search the DOM for an element that matches this selector 
+const projectList = projectSection.querySelector("ul")
+
+fetch('https://api.github.com/users/kendra-mensah/repos')
+        .then(response => response.json()) 
+        .then(data => {
+         const repositories = data;
+         console.log(repositories)
+         for (let i = 0; i < repositories.length; i++) {
+          const repository = repositories[i]
+          const project = document.createElement('li')
+          project.textContent = repository.name
+          projectList.appendChild(project)
+          console.log(repository)
+         }
+        })
+        .catch(error => console.error('Error', error))
+
+
+
+       
+
+
+        
+
+
+
+
+
+
+

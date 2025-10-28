@@ -8,7 +8,12 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    line-height: 1.6;
+}
 
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /**
@@ -18,32 +23,45 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 15px 20px;
     background-color: white;
     overflow: hidden;
     font-style: italic;
+    flex-wrap: wrap;
 }
 
 .topnav a { 
     color: black;
     text-align: center;
     padding: 14px 16px;
+    text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topnav a {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+/**
+ * Main Heading
+ */
 h1 {
     font-family: "Monsieur La Doulaise", cursive;
     font-weight: 300;
     text-align: center;
     color: rgb(203, 46, 135);
-  
-    /* responsive huge font size */
     font-size: clamp(4rem, 10vw, 12rem);
-  
-    /* adjust padding/margins to scale more gracefully */
     padding-top: 4rem;
     padding-bottom: 4rem;
     margin-bottom: 2rem;
-  }
+}
 
 /**
  * About Section
@@ -51,16 +69,18 @@ h1 {
 #About h2 {
     font-style: italic;
     font-weight: 100;
+    font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 #About p {
-    font-size: medium;
+    font-size: 1rem;
     font-style: italic;
-    font-weight: 50;
+    font-weight: 300;
     color: black;
     background-color: whitesmoke;
-    margin-top: 100px;
-    margin-bottom: 500px;
+    margin: clamp(2rem, 10vw, 6rem) 0;
+    padding: 1rem;
+    border-radius: 6px;
 }
 
 /**
@@ -70,12 +90,15 @@ h1 {
 #Experience h3 {
     font-style: italic;
     font-weight: 100;
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
 }
 
 #Experience p {
     background-color: whitesmoke;
     color: black;
-    margin-top: 100px;
+    margin: clamp(2rem, 10vw, 6rem) 0;
+    padding: 1rem;
+    border-radius: 6px;
 }
 
 #Experience ul {
@@ -91,10 +114,11 @@ h1 {
     background-color: whitesmoke;
     color: black;
     padding: 0.75rem 1.25rem;
-    border-radius: 2px;
+    border-radius: 4px;
     box-shadow: 0 2px 6px rgba(71, 72, 59, 0.2);
     text-align: center;
-    flex: 1 1 150px; 
+    flex: 1 1 150px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 #Experience li:hover {
@@ -102,10 +126,90 @@ h1 {
     transform: translateY(-4px);
 }
 
+@media (max-width: 600px) {
+    #Experience ul {
+        flex-direction: column;
+    }
+
+    #Experience li {
+        flex: 1 1 auto;
+    }
+}
+
+/**
+ * Skills Section
+ */
+#Skills h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-style: italic;
+    font-weight: 300;
+}
+
+#Skills p {
+    background-color: whitesmoke;
+    color: black;
+    margin: clamp(2rem, 10vw, 8rem) 0;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+/**
+ * Projects Section
+ */
+#Projects h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-style: italic;
+    font-weight: 300;
+}
+
+#Projects ul {
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 300;
+    background-color: whitesmoke;
+    color: black;
+    margin: clamp(2rem, 15vw, 10rem) 0;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+/**
+ * Connect Section
+ */
+#Connect h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-style: italic;
+    font-weight: 100;
+    color: black;
+    background-color: rgb(218, 199, 210);
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Font Awesome icon colors */
+.fa-github { 
+    color: #c8609b;
+}
+
+.fa-linkedin { 
+    color: rgb(229, 245, 255);
+}
+
+/**
+ * Contact Form Section
+ */
+#Form h2 {
+    font-style: italic;
+    margin-top: clamp(2rem, 10vw, 6rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+    color: whitesmoke;
+}
+
 #Form form {
     max-width: 600px;
     margin: 20px auto;
-    padding: 15px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -151,10 +255,20 @@ h1 {
     background-color: rgb(160, 130, 90);
 }
 
+/**
+ * Messages Section
+ */
+#Messages h2 {
+    font-style: italic;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
 
+/**
+ * Responsive Form Styles
+ */
 @media (max-width: 600px) {
     #Form form {
-        padding: 12px;
+        padding: 16px;
         margin: 10px;
     }
 
@@ -171,3 +285,5 @@ h1 {
         padding: 16px 0;
     }
 }
+
+
